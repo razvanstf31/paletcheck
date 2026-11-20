@@ -50,7 +50,7 @@ export function evalueaza({ kg, galetiSchimb, ritm, schimburi, maner }: DateLini
   if (![1, 2, 3].includes(schimburi)) eroare('Alegeți numărul de schimburi pe zi.', 'schimburi')
   if (!erori.length && galetiSchimb > ritm * REF.minuteSchimb) {
     const max = Math.floor(ritm * REF.minuteSchimb)
-    eroare(`Cifrele nu se potrivesc: la ${ro(ritm)} ambalaje/minut, linia poate produce cel mult ${ro(max, 0)} ${max % 100 === 0 || max % 100 >= 20 ? 'de ' : ''}ambalaje într-un schimb de 8 ore, dar ați introdus ${ro(galetiSchimb, 0)}. Verificați una dintre valori.`, 'galetiSchimb', 'ritm')
+    eroare(`Cifrele nu se potrivesc: la un ritm de ${ro(ritm)} pe minut, linia poate produce cel mult ${ro(max, 0)} ${max % 100 === 0 || max % 100 >= 20 ? 'de ' : ''}ambalaje într-un schimb de 8 ore, dar ați introdus ${ro(galetiSchimb, 0)}. Verificați una dintre valori.`, 'galetiSchimb', 'ritm')
   }
   if (erori.length) return { erori, campuri }
 

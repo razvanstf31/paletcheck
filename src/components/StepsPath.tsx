@@ -9,7 +9,7 @@ const PASI: [string, string, boolean][] = [
   ['Transportorul', 'O aduce la celulă, în ritmul liniei.', false],
   ['Camera', 'Citește orientarea mânerului înainte de preluare.', true],
   ['Prinderea', 'Dispozitivul de prindere ia ambalajul fără să atingă mânerul.', true],
-  ['Așezarea', 'Robotul o pune pe una dintre cele două poziții de paletizare.', true],
+  ['Așezarea', 'Robotul îl pune pe una dintre cele două poziții de paletizare.', true],
   ['Paletul', 'Operatorul schimbă paletul plin și așază separatorul.', false],
 ]
 

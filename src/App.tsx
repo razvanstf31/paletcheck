@@ -66,7 +66,7 @@ export default function App() {
           </h1>
           <p className="mt-6 max-w-[36rem] text-white/88 lg:mt-10 lg:text-[19px]">
             O celulă de paletizare cu UR20, ca aceea instalată de Tech-Con la PURATOS, pentru fabrici care paletizează
-            marfă de mână. Aflați în 60 de secunde dacă ține ritmul liniei dumneavoastră.
+            marfa manual. Aflați în 60 de secunde dacă ține ritmul liniei dumneavoastră.
           </p>
           <p className="absolute bottom-[52px] text-xs text-white/80 lg:bottom-[92px]">Imagine: Tech-Con.</p>
         </div>
@@ -84,7 +84,7 @@ export default function App() {
                 </figure>
               </Reveal>
               <Reveal>
-                <h2 className="h2">La PURATOS, marfă de 5 și 13 kg, așezată până atunci de mână.</h2>
+                <h2 className="h2">La PURATOS, recipiente cu mâner de 5 și 13 kg, așezate până atunci de mână.</h2>
                 <dl className="mt-8 border-b border-line">
                   {PURATOS.map((r) => (
                     <div key={r.k} className="grid grid-cols-[6.5rem_1fr] gap-4 border-t border-line py-4">
@@ -158,7 +158,7 @@ export default function App() {
                 <Mark className="size-6" /> stackato
               </a>
               <p className="mt-4 max-w-[42ch] text-white/72">
-                Un verificator de 60 de secunde pentru fabrici care paletizează marfă de mână: câte tone se ridică de mână și dacă o
+                Un verificator de 60 de secunde pentru fabrici care paletizează marfa manual: câte tone se ridică de mână și dacă o
                 celulă de paletizare UR20 ține ritmul liniei.
               </p>
               <p className="mt-4 text-sm">
