@@ -48,8 +48,8 @@ export default function App() {
           className="absolute inset-0 -z-10 size-full object-cover" />
         <div aria-hidden className="shade absolute inset-0 -z-10" />
         <nav aria-label="Principal" className="wrap flex h-20 items-center justify-between gap-4 lg:h-24">
-          <a href="#" className="flex items-center gap-2 font-display text-[22px] font-medium tracking-[-0.03em] no-underline">
-            <Mark className="size-5" /> paletcheck
+          <a href="#" className="flex items-center gap-1 font-display text-[22px] font-semibold tracking-[-0.03em] no-underline">
+            <Mark className="size-6" /> stackato
           </a>
           <div className="flex items-center gap-8">
             <ul className="hidden items-center gap-8 text-[15px] lg:flex">
@@ -154,14 +154,16 @@ export default function App() {
         <div className="wrap">
           <div className="grid gap-10 pt-16 pb-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] lg:gap-16 lg:pt-20">
             <div className="sm:col-span-2 lg:col-span-1">
-              <a href="#" className="flex items-center gap-2 font-display text-[22px] font-medium tracking-[-0.03em] no-underline">
-                <Mark className="size-5" /> paletcheck
+              <a href="#" className="flex items-center gap-1 font-display text-[22px] font-semibold tracking-[-0.03em] no-underline">
+                <Mark className="size-6" /> stackato
               </a>
               <p className="mt-4 max-w-[42ch] text-white/72">
                 Un verificator de 60 de secunde pentru fabrici care ambalează în găleți: câte tone se ridică de mână și dacă o
                 celulă de paletizare UR20 ține ritmul liniei.
               </p>
-              <p className="mt-4 text-sm">O soluție Tech-Con</p>
+              <p className="mt-4 text-sm">
+                O soluție Tech-Con <span className="text-white/50" lang="en">· Steady stacking.</span>
+              </p>
             </div>
             <nav aria-label="Secțiunile paginii">
               <h2 className="text-sm font-semibold">Pe pagină</h2>

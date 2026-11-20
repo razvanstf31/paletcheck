@@ -19,13 +19,14 @@ export function Reveal({ children, className, delay = 0 }: { children: ReactNode
   )
 }
 
-// the mark: a dot above two short bars
+// the mark: monogram "s" (three stacked strokes joined by curves) with the bucket dot coming in;
+// geometry from Figma node 45:674 on its 32 px grid. Both uses sit on dark, so the dot is the light blue.
 export function Mark({ className }: { className?: string }) {
   return (
-    <svg aria-hidden viewBox="0 0 20 20" className={className} fill="currentColor">
-      <circle cx="10" cy="4.5" r="3.2" />
-      <rect x="3" y="10" width="14" height="3" rx="1.5" />
-      <rect x="3" y="15" width="14" height="3" rx="1.5" />
+    <svg aria-hidden viewBox="0 0 32 32" className={className}>
+      <path d="M20 6H11a5 5 0 0 0 0 10h10a5 5 0 0 1 0 10H6" fill="none" stroke="currentColor" strokeWidth="4.5"
+        strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="27" cy="6" r="2.75" fill="#6FB3E8" />
     </svg>
   )
 }

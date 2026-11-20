@@ -233,7 +233,7 @@ function Request({ run }: { run: Rulare }) {
       <div className="wrap grid gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
           <Reveal>
-            <h2 className="h2">Trimiteți fișa liniei către Tech-Con.</h2>
+            <h2 className="h2">Trimite fișa de producție către Tech-Con.</h2>
             <p className="mt-4 max-w-[34rem] text-muted">Cifrele din verificator pleacă odată cu cererea. Vă răspunde echipa cea mai apropiată: Dragomirești-Deal, Iași sau Timișoara.</p>
           </Reveal>
           <div aria-live="polite" className="sr-only">{anunt}</div>

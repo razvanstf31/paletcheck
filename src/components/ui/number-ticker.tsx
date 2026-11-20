@@ -22,7 +22,7 @@ export function NumberTicker({
 }: NumberTickerProps) {
   const ref = useRef<HTMLSpanElement>(null)
   const motionValue = useMotionValue(direction === "down" ? value : startValue)
-  // PaletCheck: a fixed 0.8 s count (design guide) instead of a spring; no motion when reduced
+  // Stackato: a fixed 0.8 s count (design guide) instead of a spring; no motion when reduced
   const reduce = useReducedMotion()
   const isInView = useInView(ref, { once: true, margin: "0px" })
 
