@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f4f5f3;
+  --color-ink: #14171a;
+  --color-muted: #5b6269;
+  --color-line: #d5d9dc;
+  --color-blue: #1f6aa8;
+  --color-blue-hover: #185888;
+  --color-sky: #6fb3e8;
+  /* verdict colours: only in the verdict pill and error states */
+  --color-ok: #1e5631;
+  --color-ok-bg: #ddebdd;
+  --color-warn: #8a4b0f;
+  --color-warn-bg: #fbe7d3;
+  --color-bad: #9b2c22;
+  --color-bad-bg: #f8dcd9;
+
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html { color-scheme: light; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  @media (min-width: 1024px) { body { font-size: 17px; } }
+  /* --ring turns white on graphite and photo grounds (.on-dark) */
+  :focus-visible { outline: 2px solid var(--ring, var(--color-blue)); outline-offset: 3px; border-radius: 4px; }
+  ::selection { background: var(--color-blue); color: #fff; }
+  input, select, textarea { caret-color: var(--color-blue); }
+  a { text-underline-offset: 0.22em; }
+  [id] { scroll-margin-top: 24px; }
+}
+
+.on-dark { --ring: #fff; }
+
+@utility wrap {
+  margin-inline: auto; width: 100%; max-width: 1264px; padding-inline: 20px;
+  @media (min-width: 640px) { padding-inline: 32px; }
+}
+@utility section {
+  padding-block: 80px;
+  @media (min-width: 1024px) { padding-block: 112px; }
+}
+@utility display {
+  font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1.05; font-variant-numeric: tabular-nums;
+}
+@utility h2 {
+  font-family: var(--font-display); font-weight: 600; letter-spacing: -0.03em; line-height: 1.08;
+  font-size: 32px; text-wrap: balance;
+  @media (min-width: 1024px) { font-size: 44px; }
+}
+@utility value {
+  font-family: var(--font-display); font-weight: 500; letter-spacing: -0.03em; line-height: 1.1;
+  font-size: 30px; font-variant-numeric: tabular-nums;
+  @media (min-width: 1024px) { font-size: 34px; }
+}
+@utility pill {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 9999px;
+  padding-inline: 22px; font-weight: 600; transition: background-color 150ms, color 150ms, border-color 150ms;
+}
+
+/* hero text protection: strong where text sits, lighter only on the far right of wide screens */
+.shade {
+  background:
+    linear-gradient(180deg, rgb(20 23 26 / 0.7) 0, rgb(20 23 26 / 0) 160px),
+    linear-gradient(180deg, rgb(20 23 26 / 0.84), rgb(20 23 26 / 0.76));
+}
+@media (min-width: 1024px) {
+  .shade {
+    background:
+      linear-gradient(180deg, rgb(20 23 26 / 0.7) 0, rgb(20 23 26 / 0) 160px),
+      linear-gradient(90deg, rgb(20 23 26 / 0.94) 0%, rgb(20 23 26 / 0.8) 50%, rgb(20 23 26 / 0.3) 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
