@@ -5,10 +5,10 @@ import { useEffect, useRef } from 'react'
 // up when the line reaches it, and a short bright segment rides at the front of the line.
 
 const PASI: [string, string, boolean][] = [
-  ['Umplerea', 'Găleata iese plină din mașina de umplere.', false],
+  ['Umplerea', 'Marfa iese ambalată din mașina de umplere.', false],
   ['Transportorul', 'O aduce la celulă, în ritmul liniei.', false],
   ['Camera', 'Citește orientarea mânerului înainte de preluare.', true],
-  ['Prinderea', 'Dispozitivul de prindere ia găleata fără să atingă mânerul.', true],
+  ['Prinderea', 'Dispozitivul de prindere ia ambalajul; la găleți, fără să atingă mânerul.', true],
   ['Așezarea', 'Robotul o pune pe una dintre cele două poziții de paletizare.', true],
   ['Paletul', 'Operatorul schimbă paletul plin și așază separatorul.', false],
 ]

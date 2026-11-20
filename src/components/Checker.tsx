@@ -16,17 +16,17 @@ const int = (s: string) => (s.trim() === '' ? NaN : Number(s.replace(/[\s.]/g, '
 const toDate = (c: Campuri): DateLinie => ({
   kg: dec(c.kg), galetiSchimb: int(c.galeti), ritm: dec(c.ritm), schimburi: Number(c.schimburi) || NaN, maner: c.maner,
 })
-// Romanian: "400 de găleți", "13 găleți"
+// Romanian: "400 de ambalaje", "13 ambalaje"
 const de = (n: number) => (Number.isInteger(n) && (n % 100 === 0 ? n !== 0 : n % 100 >= 20) ? 'de ' : '')
 
 export const VERDICT: Record<Nivel, { text: string; lead: string; cls: string }> = {
   da: { text: 'Se potrivește', lead: 'După cifrele de test, o celulă UR20 ar trebui să țină ritmul liniei dvs. Se confirmă la evaluarea tehnică.', cls: 'bg-ok-bg text-ok' },
   evaluare: { text: 'Necesită evaluare tehnică', lead: 'Pare posibil, dar unele date ies din ce s-a testat la PURATOS.', cls: 'bg-warn-bg text-warn' },
-  nu: { text: 'Nu se potrivește', lead: 'O celulă UR20 nu este potrivită pentru această găleată.', cls: 'bg-bad-bg text-bad' },
+  nu: { text: 'Nu se potrivește', lead: 'O celulă UR20 nu este potrivită pentru această marfă.', cls: 'bg-bad-bg text-bad' },
 }
 
 export const DE_VERIFICAT = [
-  'Forma, materialul și stabilitatea găleții; sarcina totală include dispozitivul de prindere.',
+  'Forma, materialul și stabilitatea ambalajului; sarcina totală include dispozitivul de prindere.',
   'Spațiul și accesul la celulă.',
   'Schimbarea paleților și amplasarea separatoarelor rămân manuale.',
   'Evaluarea riscurilor, cerințele de igienă și procedurile de operare.',
@@ -100,8 +100,8 @@ export function Checker({ children }: { children: ReactNode }) {
         <div className="wrap">
           <form noValidate onSubmit={verifica}
             className="grid grid-cols-2 gap-x-5 gap-y-5 rounded-[22px] bg-white p-5 shadow-[0_26px_60px_rgb(20_23_26/0.22)] md:grid-cols-4 lg:grid-cols-[repeat(4,minmax(0,1fr))_auto] lg:items-center lg:gap-0 lg:px-9 lg:py-8">
-            <Field id="kg" label="Greutatea unei găleți pline" unit="kg" inputMode="decimal" value={c.kg} onChange={set('kg')} {...ep('kg')} />
-            <Field id="galetiSchimb" label="Găleți pe schimb" inputMode="numeric" value={c.galeti} onChange={set('galeti')} {...ep('galetiSchimb')} className="lg:border-l lg:border-line lg:pl-6" />
+            <Field id="kg" label="Greutatea unui ambalaj plin" unit="kg" inputMode="decimal" value={c.kg} onChange={set('kg')} {...ep('kg')} />
+            <Field id="galetiSchimb" label="Ambalaje pe schimb" inputMode="numeric" value={c.galeti} onChange={set('galeti')} {...ep('galetiSchimb')} className="lg:border-l lg:border-line lg:pl-6" />
             <Field id="ritm" label="Ritmul maxim al liniei" unit="pe minut" inputMode="decimal" value={c.ritm} onChange={set('ritm')} {...ep('ritm')} className="lg:border-l lg:border-line lg:pl-6" />
             <div className="min-w-0 lg:border-l lg:border-line lg:pl-6">
               <label htmlFor="schimburi" className="block text-[13px] leading-snug text-muted">Schimburi pe zi</label>
@@ -122,7 +122,7 @@ export function Checker({ children }: { children: ReactNode }) {
           <div className="mt-5 flex flex-wrap gap-2">
             <button type="button" aria-pressed={c.maner} onClick={() => setC((x) => ({ ...x, maner: !x.maner }))}
               className={cn('pill border px-5 text-sm font-medium', c.maner ? 'border-ink bg-ink text-white' : 'border-line text-ink hover:border-ink')}>
-              Găleata are mâner
+              Marfă în găleți cu mâner
             </button>
             <button type="button" className={btnOutline} onClick={() => exemplu(EX_BUN)}>Exemplu: găleți de 13 kg</button>
             <button type="button" className={btnOutline} onClick={() => exemplu(EX_GRESIT)}>Exemplu cu date greșite</button>
@@ -290,9 +290,9 @@ function Fisa({ c, run, zi, onEdit }: { c: { firma: string; rol: string; email: 
       <h4 className={grup}>Linia</h4>
       {rez ? (
         <dl className="mt-2">
-          <Rand k="Găleată plină" v={`${ro(d.kg)} kg, ${d.maner ? 'cu mâner' : 'fără mâner'}`} />
-          <Rand k="Găleți pe schimb" v={ro(d.galetiSchimb, 0)} />
-          <Rand k="Ritm maxim" v={`${ro(d.ritm)} găleți/min`} />
+          <Rand k="Ambalaj plin" v={`${ro(d.kg)} kg, ${d.maner ? 'găleată cu mâner' : 'alt ambalaj'}`} />
+          <Rand k="Ambalaje pe schimb" v={ro(d.galetiSchimb, 0)} />
+          <Rand k="Ritm maxim" v={`${ro(d.ritm)} ambalaje/min`} />
           <Rand k="Schimburi pe zi" v={d.schimburi} />
         </dl>
       ) : (

@@ -15,14 +15,14 @@ const PURATOS = [
 ]
 
 const LINIE = [
-  { t: 'Mai puțină ridicare manuală.', d: 'Găleata nu mai trece prin mâinile unui om la fiecare câteva secunde.' },
-  { t: 'Găleți așezate la fel, de fiecare dată.', d: 'Robotul urmează un model de paletizare programat, cu rezultate repetabile.' },
+  { t: 'Mai puțină ridicare manuală.', d: 'Marfa nu mai trece prin mâinile unui om la fiecare câteva secunde.' },
+  { t: 'Marfă așezată la fel, de fiecare dată.', d: 'Robotul urmează un model de paletizare programat, cu rezultate repetabile.' },
   { t: 'Un ritm pe care îl puteți măsura.', d: 'Ritmul de paletizare se verifică față de alimentarea liniei.' },
 ]
 
 const LA_OAMENI = ['Schimbarea paleților', 'Amplasarea separatoarelor', 'Umplerea, ca până acum']
 const VERIFICAM = [
-  'Greutatea, forma, materialul și mânerul găleții',
+  'Greutatea, forma și materialul ambalajului (la găleți, și mânerul)',
   'Debitul liniei și modelul de paletizare',
   'Spațiul, accesul, igiena și riscurile',
   'Integrarea transportorului de alimentare',
@@ -62,11 +62,11 @@ export default function App() {
         </nav>
         <div className="wrap relative pt-10 pb-28 lg:pt-24 lg:pb-[200px]">
           <h1 className="display text-[44px] leading-[1.02] font-semibold sm:text-[64px] lg:text-[80px]">
-            <span className="lg:whitespace-nowrap">Robotul ridică găleata.</span><br /><span className="lg:whitespace-nowrap">Oamenii schimbă paletul.</span>
+            <span className="lg:whitespace-nowrap">Robotul ridică marfa.</span><br /><span className="lg:whitespace-nowrap">Oamenii schimbă paletul.</span>
           </h1>
           <p className="mt-6 max-w-[36rem] text-white/88 lg:mt-10 lg:text-[19px]">
-            O celulă de paletizare cu UR20, ca aceea instalată de Tech-Con la PURATOS, pentru fabrici care ambalează în
-            găleți. Aflați în 60 de secunde dacă ține ritmul liniei dumneavoastră.
+            O celulă de paletizare cu UR20, ca aceea instalată de Tech-Con la PURATOS, pentru fabrici care paletizează
+            marfă de mână. Aflați în 60 de secunde dacă ține ritmul liniei dumneavoastră.
           </p>
           <p className="absolute bottom-[52px] text-xs text-white/80 lg:bottom-[92px]">Imagine: Tech-Con.</p>
         </div>
@@ -158,7 +158,7 @@ export default function App() {
                 <Mark className="size-6" /> stackato
               </a>
               <p className="mt-4 max-w-[42ch] text-white/72">
-                Un verificator de 60 de secunde pentru fabrici care ambalează în găleți: câte tone se ridică de mână și dacă o
+                Un verificator de 60 de secunde pentru fabrici care paletizează marfă de mână: câte tone se ridică de mână și dacă o
                 celulă de paletizare UR20 ține ritmul liniei.
               </p>
               <p className="mt-4 text-sm">
