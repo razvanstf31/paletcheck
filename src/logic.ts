@@ -62,8 +62,8 @@ export function evalueaza({ kg, galetiSchimb, ritm, schimburi, maner }: DateLini
   // Only 5 and 13 kg were tested at PURATOS; anything between is our estimate and must say so.
   const exact = kg === REF.kgTestatMin || kg === REF.kgTestatMax
   const reper = exact
-    ? `${ro(testat)} găleți/minut, testat la PURATOS pentru această greutate`
-    : `aproximativ ${ro(testat)} găleți/minut, estimat de noi între ${ro(REF.ritm5)} (5 kg) și ${ro(REF.ritm13)} (13 kg), valorile testate la PURATOS`
+    ? `${ro(testat)} ambalaje/minut, testat la PURATOS pentru această greutate`
+    : `aproximativ ${ro(testat)} ambalaje/minut, estimat de noi între ${ro(REF.ritm5)} (5 kg) și ${ro(REF.ritm13)} (13 kg), valorile testate la PURATOS`
 
   // >= because the gripper also counts against the payload.
   if (kg >= REF.sarcinaKg) {
@@ -73,7 +73,7 @@ export function evalueaza({ kg, galetiSchimb, ritm, schimburi, maner }: DateLini
     if (kg < REF.kgTestatMin || kg > REF.kgTestatMax)
       cere(`Greutatea de ${ro(kg)} kg este în afara intervalului testat (${REF.kgTestatMin}–${REF.kgTestatMax} kg). Trebuie verificate prinderea și sarcina totală.`)
     if (!maner)
-      cere('Dispozitivul de prindere și camera au fost testate pe găleți cu mâner. Pentru altă marfă (cutii, saci, bidoane) prinderea și ritmul se validează la evaluarea tehnică.')
+      cere('Dispozitivul de prindere și camera au fost testate pe recipiente cu mâner. Pentru altă marfă (cutii, saci, bidoane) prinderea și ritmul se validează la evaluarea tehnică.')
     if (ritm > testat)
       cere(`Linia dvs. ajunge la ${ro(ritm)} ambalaje/minut, peste ritmul robotului: ${reper}. O singură celulă poate să nu țină ritmul.`)
     if (nivel === 'da')

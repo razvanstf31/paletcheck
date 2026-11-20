@@ -96,7 +96,7 @@ export function Checker({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <section id="verificare" aria-label="Verificați linia" className="relative z-10 -mt-10 lg:-mt-[72px]">
+      <section id="verificare" aria-label="Verificați producția" className="relative z-10 -mt-10 lg:-mt-[72px]">
         <div className="wrap">
           <form noValidate onSubmit={verifica}
             className="grid grid-cols-2 gap-x-5 gap-y-5 rounded-[22px] bg-white p-5 shadow-[0_26px_60px_rgb(20_23_26/0.22)] md:grid-cols-4 lg:grid-cols-[repeat(4,minmax(0,1fr))_auto] lg:items-center lg:gap-0 lg:px-9 lg:py-8">
@@ -116,15 +116,15 @@ export function Checker({ children }: { children: ReactNode }) {
                 </svg>
               </div>
             </div>
-            <button type="submit" className={cn(btnBlue, 'col-span-2 w-full md:col-span-4 lg:col-span-1 lg:ml-6 lg:w-auto')}>Verificați linia</button>
+            <button type="submit" className={cn(btnBlue, 'col-span-2 w-full md:col-span-4 lg:col-span-1 lg:ml-6 lg:w-auto')}>Verificați producția</button>
           </form>
 
           <div className="mt-5 flex flex-wrap gap-2">
             <button type="button" aria-pressed={c.maner} onClick={() => setC((x) => ({ ...x, maner: !x.maner }))}
               className={cn('pill border px-5 text-sm font-medium', c.maner ? 'border-ink bg-ink text-white' : 'border-line text-ink hover:border-ink')}>
-              Marfă în găleți cu mâner
+              Ambalaj cu mâner
             </button>
-            <button type="button" className={btnOutline} onClick={() => exemplu(EX_BUN)}>Exemplu: găleți de 13 kg</button>
+            <button type="button" className={btnOutline} onClick={() => exemplu(EX_BUN)}>Exemplu: marfă de 13 kg</button>
             <button type="button" className={btnOutline} onClick={() => exemplu(EX_GRESIT)}>Exemplu cu date greșite</button>
           </div>
         </div>
@@ -290,7 +290,7 @@ function Fisa({ c, run, zi, onEdit }: { c: { firma: string; rol: string; email: 
       <h4 className={grup}>Linia</h4>
       {rez ? (
         <dl className="mt-2">
-          <Rand k="Ambalaj plin" v={`${ro(d.kg)} kg, ${d.maner ? 'găleată cu mâner' : 'alt ambalaj'}`} />
+          <Rand k="Ambalaj plin" v={`${ro(d.kg)} kg, ${d.maner ? 'cu mâner' : 'fără mâner'}`} />
           <Rand k="Ambalaje pe schimb" v={ro(d.galetiSchimb, 0)} />
           <Rand k="Ritm maxim" v={`${ro(d.ritm)} ambalaje/min`} />
           <Rand k="Schimburi pe zi" v={d.schimburi} />

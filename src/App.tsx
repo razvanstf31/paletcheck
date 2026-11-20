@@ -5,8 +5,8 @@ import { FooterMark } from '@/components/FooterMark'
 
 const PURATOS = [
   { k: 'Înainte', v: 'Doi operatori pe schimb, în două până la trei schimburi pe zi.' },
-  { k: 'Paletul', v: '100 de găleți de 5 kg sau 44 de găleți de 13 kg.' },
-  { k: 'Ținta', v: 'Minimum 6 găleți pe minut.' },
+  { k: 'Paletul', v: '100 de ambalaje de 5 kg sau 44 de 13 kg.' },
+  { k: 'Ținta', v: 'Minimum 6 ambalaje pe minut.' },
   {
     k: 'Testat',
     v: <><b className="font-semibold text-blue">7,4</b> pe minut la 13 kg și <b className="font-semibold text-blue">8,6</b> pe minut la 5 kg.</>,
@@ -22,7 +22,7 @@ const LINIE = [
 
 const LA_OAMENI = ['Schimbarea paleților', 'Amplasarea separatoarelor', 'Umplerea, ca până acum']
 const VERIFICAM = [
-  'Greutatea, forma și materialul ambalajului (la găleți, și mânerul)',
+  'Greutatea, forma și materialul ambalajului (și mânerul, dacă are)',
   'Debitul liniei și modelul de paletizare',
   'Spațiul, accesul, igiena și riscurile',
   'Integrarea transportorului de alimentare',
@@ -62,7 +62,7 @@ export default function App() {
         </nav>
         <div className="wrap relative pt-10 pb-28 lg:pt-24 lg:pb-[200px]">
           <h1 className="display text-[44px] leading-[1.02] font-semibold sm:text-[64px] lg:text-[80px]">
-            <span className="lg:whitespace-nowrap">Robotul ridică marfa.</span><br /><span className="lg:whitespace-nowrap">Oamenii schimbă paletul.</span>
+            <span className="lg:whitespace-nowrap">Robotul ridică marfa.</span><br /><span className="lg:whitespace-nowrap">Totul pe mâini sigure.</span>
           </h1>
           <p className="mt-6 max-w-[36rem] text-white/88 lg:mt-10 lg:text-[19px]">
             O celulă de paletizare cu UR20, ca aceea instalată de Tech-Con la PURATOS, pentru fabrici care paletizează
@@ -79,12 +79,12 @@ export default function App() {
               <Reveal>
                 <figure className="max-w-[640px]">
                   <img src="./img/puratos.jpg" width={604} height={340} loading="lazy" decoding="async"
-                    alt="Două celule de paletizare UR20 așază găleți pe paleți la PURATOS" className="w-full max-w-[604px] rounded-[20px]" />
+                    alt="Două celule de paletizare UR20 așază marfa pe paleți la PURATOS" className="w-full max-w-[604px] rounded-[20px]" />
                   <figcaption className="mt-3 text-sm text-muted">Celulele UR20 de la PURATOS. Sursa imaginii: prezentarea Tech-Con.</figcaption>
                 </figure>
               </Reveal>
               <Reveal>
-                <h2 className="h2">La PURATOS, găleți de 5 și 13 kg, așezate până atunci de mână.</h2>
+                <h2 className="h2">La PURATOS, marfă de 5 și 13 kg, așezată până atunci de mână.</h2>
                 <dl className="mt-8 border-b border-line">
                   {PURATOS.map((r) => (
                     <div key={r.k} className="grid grid-cols-[6.5rem_1fr] gap-4 border-t border-line py-4">
@@ -168,7 +168,7 @@ export default function App() {
             <nav aria-label="Secțiunile paginii">
               <h2 className="text-sm font-semibold">Pe pagină</h2>
               <ul className="mt-4 grid gap-3 text-white/72">
-                <li><a className="hover:text-white hover:underline" href="#verificare">Verificați linia</a></li>
+                <li><a className="hover:text-white hover:underline" href="#verificare">Verificați producția</a></li>
                 <li><a className="hover:text-white hover:underline" href="#puratos">Cazul PURATOS</a></li>
                 <li><a className="hover:text-white hover:underline" href="#cum-lucreaza">Cum lucrează celula</a></li>
                 <li><a className="hover:text-white hover:underline" href="#ce-nu-promitem">Ce nu promitem</a></li>
